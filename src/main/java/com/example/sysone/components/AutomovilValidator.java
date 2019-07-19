@@ -7,7 +7,7 @@ import com.example.sysone.exceptions.NoValidaNameAuto;
 import com.example.sysone.models.AutomovilModel;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import java.util.Set;
 
 @Component
 public class AutomovilValidator {
@@ -21,7 +21,7 @@ public class AutomovilValidator {
             throw new NoValidNameOpcional();
     }
 
-    public Boolean validateOpciones(List<String> opciones ){
+    public Boolean validateOpciones(Set<String> opciones ){
 
         for(String name: opciones){
             if (OpcionalesEnum.getFromName(name) == null )

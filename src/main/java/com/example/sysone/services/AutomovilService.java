@@ -7,6 +7,7 @@ import com.example.sysone.exceptions.NoValidNameOpcional;
 import com.example.sysone.exceptions.NoValidaNameAuto;
 import com.example.sysone.models.AutomovilModel;
 import com.example.sysone.repositories.IAutomovilRepository;
+import com.example.sysone.repositories.IOpcionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -35,12 +36,10 @@ public class AutomovilService implements IAutomovilService{
     @Autowired
     private AutomovilValidator validator;
 
-
     private Log log = LogFactory.getLog(AutomovilService.class);
 
     @Transactional
     public List<AutomovilModel> getAutos(){
-
         return this.converter.entityToModelList( (List<Automovil>)this.repository.findAll() );
     }
 

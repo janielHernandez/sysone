@@ -41,7 +41,7 @@ public class AutomovilConverter {
                 auto.getOpciones()
                 .stream()
                 .map(x -> x.getName())
-                .collect(Collectors.toList())
+                .collect(Collectors.toSet())
         );
 
         return model;
@@ -58,7 +58,8 @@ public class AutomovilConverter {
                         .map(
                         x-> opcionFactory.getOpcion( OpcionalesEnum.getFromName(x) )
                         )
-                        .collect(Collectors.toList())
+                        .collect(Collectors.toSet())
+
         );
         return entity;
     }

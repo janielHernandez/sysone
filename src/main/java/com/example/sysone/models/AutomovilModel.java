@@ -3,7 +3,7 @@ package com.example.sysone.models;
 import org.springframework.lang.Nullable;
 
 import java.util.LinkedList;
-import java.util.List;
+import java.util.Set;
 
 public class AutomovilModel {
 
@@ -12,7 +12,7 @@ public class AutomovilModel {
 
     @Nullable
     private Integer price;
-    private List<String> opciones = new LinkedList<>();
+    private Set<String> opciones;
 
 
     public void update(AutomovilModel a){
@@ -46,11 +46,11 @@ public class AutomovilModel {
         this.name = name;
     }
 
-    public List<String> getOpciones() {
+    public Set<String> getOpciones() {
         return opciones;
     }
 
-    public void setOpciones(List<String> opciones) {
+    public void setOpciones(Set<String> opciones) {
         this.opciones = opciones;
     }
 }

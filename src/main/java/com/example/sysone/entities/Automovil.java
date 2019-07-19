@@ -1,8 +1,8 @@
 package com.example.sysone.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -20,7 +20,7 @@ public class Automovil extends Product {
             joinColumns = @JoinColumn(name = "auto_id"),
             inverseJoinColumns = @JoinColumn(name = "opcion_id")
     )
-    private List<Opcion> opciones = new ArrayList<>();
+    private Set<Opcion> opciones = new HashSet<>();
 
 
    public void addOpcion(Opcion op){
@@ -33,11 +33,11 @@ public class Automovil extends Product {
         opciones.remove(op);
     }
 
-    public List<Opcion> getOpciones() {
+    public Set<Opcion> getOpciones() {
 
         return this.opciones;
     }
-    public void setOpciones(List<Opcion> opciones) {
+    public void setOpciones(Set<Opcion> opciones) {
 
         this.opciones = opciones;
     }

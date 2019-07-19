@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -55,15 +56,17 @@ public class SysoneApplicationTests {
 
         Assert.assertTrue(
             validator.validateOpciones(
-                            Arrays.asList(OpcionalesEnum.AIRE_ACONDICIONADO.getName(),
+                    new HashSet<>( Arrays.asList(OpcionalesEnum.AIRE_ACONDICIONADO.getName(),
                                             OpcionalesEnum.AIR_BAG.getName())
                     )
+            )
         );
 
         Assert.assertFalse(
                 validator.validateOpciones(
-                        Arrays.asList(OpcionalesEnum.AIRE_ACONDICIONADO.getName(),
+                        new HashSet<>(   Arrays.asList(OpcionalesEnum.AIRE_ACONDICIONADO.getName(),
                                 "Vaina" )
+                        )
                 )
         );
 

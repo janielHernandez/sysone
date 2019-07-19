@@ -3,7 +3,7 @@ package com.example.sysone.components;
 import com.example.sysone.entities.Automovil;
 import com.example.sysone.enums.OpcionalesEnum;
 import com.example.sysone.enums.TiposAutomovilEnum;
-import com.example.sysone.factories.IOpcionesFactory;
+import com.example.sysone.factories.IOpcionFactory;
 import com.example.sysone.models.AutomovilModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class AutomovilConverter {
     private AutomovilOperation operations;
 
     @Autowired
-    private IOpcionesFactory opcionFactory;
+    private IOpcionFactory opcionFactory;
 
     public List<AutomovilModel> entityToModelList(List<Automovil> autos){
 

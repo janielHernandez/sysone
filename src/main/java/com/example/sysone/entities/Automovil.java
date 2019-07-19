@@ -9,9 +9,7 @@ import java.util.List;
 public class Automovil extends Product {
 
 
-    public Automovil(){
-
-    }
+    public Automovil(){ }
 
     public Automovil(String name, Integer price){
         super(name, price);
@@ -43,6 +41,4 @@ public class Automovil extends Product {
 
         this.opciones = opciones;
     }
-
-
 }
